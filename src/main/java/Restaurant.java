@@ -84,4 +84,17 @@ public  class Restaurant {
 	public void setClosingTime(LocalTime closingTime) {
 		this.closingTime = closingTime;
 	}
+
+	/**
+	 *  This method returns total order value of all the items in the menu
+	 */
+	public int getOrderValue(List<Item> items) {
+	
+		int totalValue=0;
+		for(Item item: items)
+		{
+			totalValue = totalValue + item.getPrice();
+		}
+		return totalValue;
+	}
 }

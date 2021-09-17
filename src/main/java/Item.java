@@ -1,6 +1,13 @@
+/**
+ * 
+ * @author Vamsi Manohar
+ *17-Sep-2021 2021
+ */
 public class Item {
     private String name;
-    private int price;
+ 
+
+	private int price;
 
     public Item(String name, int price) {
         this.name = name;
@@ -17,4 +24,9 @@ public class Item {
                 + "\n"
                 ;
     }
+    
+    public int getPrice() {
+ 		return price;
+ 	}
+
 }

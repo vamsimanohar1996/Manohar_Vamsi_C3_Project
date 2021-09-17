@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * @author Vamsi Manohar 16-Sep-2021 2021
  */
 
-class RestaurantServiceTest {
+final class RestaurantServiceTest {
 
 	 RestaurantService service = new RestaurantService();
 	 Restaurant restaurant;
