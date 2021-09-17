@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,6 +14,7 @@ class RestaurantTest {
 	Restaurant restaurant;
 
 	RestaurantService service = new RestaurantService();
+	List<Item>items=new ArrayList<Item>();
 
 	/**
 	 * Adding some static restaurant data which will be used across all the test
@@ -76,4 +79,21 @@ class RestaurantTest {
 		assertThrows(itemNotFoundException.class, () -> restaurant.removeFromMenu("French fries"));
 	}
 	// <<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+	
+	@Test
+	public void calculated_total_order_value_should_be_cummulative_of_all_the_selected_items_price_from_the_menu() {
+		
+		items = restaurant.getMenu();
+		int totalOrderValue = restaurant.getOrderValue(items);
+	}
+	
+	
+	@Test
+	public void calculated_total_should_reduce_when_items_removed()
+	{
+		items = restaurant.getMenu();
+		int initialOrderValue =  restaurant.getOrderValue(items);
+		
+	}
 }
